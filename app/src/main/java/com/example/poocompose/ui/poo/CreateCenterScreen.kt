@@ -1,4 +1,4 @@
-package com.example.poocompose.ui
+package com.example.poocompose.ui.poo
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
@@ -20,26 +20,26 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.poocompose.data.models.PowerForward
+import com.example.poocompose.data.models.Center
 import com.example.poocompose.ui.components.CustomButton
 import java.util.Locale
 
 @Composable
-fun CreatePFScreen() {
+fun CreateCenterScreen() {
 
     val context = LocalContext.current
 
     var name by remember {
-        mutableStateOf("Kawhi")
+        mutableStateOf("Joel")
     }
     var lastName by remember {
-        mutableStateOf("Leonard")
+        mutableStateOf("Embiid")
     }
     var age by remember {
-        mutableStateOf(33)
+        mutableStateOf(28)
     }
     var team by remember {
-        mutableStateOf("Los Angeles Clippers")
+        mutableStateOf("Philadelphia 76ers")
     }
     var handed by remember {
         mutableStateOf("Right")
@@ -48,7 +48,7 @@ fun CreatePFScreen() {
         mutableStateOf<Double>(40000000.0)
     }
     var player by remember {
-        mutableStateOf<PowerForward?>(null)
+        mutableStateOf<Center?>(null)
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -165,7 +165,7 @@ fun CreatePFScreen() {
 
             CustomButton(text = "Create Player") {
                 if (name.isNotEmpty() && lastName.isNotEmpty() && age != 0 && team.isNotEmpty() && handed.isNotEmpty() && salary != 0.0) {
-                    player = PowerForward(
+                    player = Center(
                         name, lastName, age, team, handed, salary
                     )
                     name = ""

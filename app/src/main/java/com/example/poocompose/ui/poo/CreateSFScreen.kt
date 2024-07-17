@@ -1,4 +1,4 @@
-package com.example.poocompose.ui
+package com.example.poocompose.ui.poo
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
@@ -20,36 +20,35 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.poocompose.data.models.PointGuard
-import com.example.poocompose.data.models.ShootingGuard
+import com.example.poocompose.data.models.SmallForward
 import com.example.poocompose.ui.components.CustomButton
 import java.util.Locale
 
 @Composable
-fun CreateSGScreen() {
+fun CreateSFScreen() {
 
     val context = LocalContext.current
 
     var name by remember {
-        mutableStateOf("Luka")
+        mutableStateOf("Lebron")
     }
     var lastName by remember {
-        mutableStateOf("Doncic")
+        mutableStateOf("James")
     }
     var age by remember {
-        mutableStateOf(24)
+        mutableStateOf(39)
     }
     var team by remember {
-        mutableStateOf("Dallas Maverics")
+        mutableStateOf("Los Angeles Lakers")
     }
     var handed by remember {
         mutableStateOf("Right")
     }
     var salary by remember {
-        mutableStateOf<Double>(50000000.0)
+        mutableStateOf<Double>(40000000.0)
     }
     var player by remember {
-        mutableStateOf<ShootingGuard?>(null)
+        mutableStateOf<SmallForward?>(null)
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -166,7 +165,7 @@ fun CreateSGScreen() {
 
             CustomButton(text = "Create Player") {
                 if (name.isNotEmpty() && lastName.isNotEmpty() && age != 0 && team.isNotEmpty() && handed.isNotEmpty() && salary != 0.0) {
-                    player = ShootingGuard(
+                    player = SmallForward(
                         name, lastName, age, team, handed, salary
                     )
                     name = ""

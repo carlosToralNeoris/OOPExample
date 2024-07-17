@@ -1,4 +1,4 @@
-package com.example.poocompose.ui
+package com.example.poocompose.ui.poo
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
@@ -20,37 +20,35 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.poocompose.data.models.PointGuard
+import com.example.poocompose.data.models.PowerForward
 import com.example.poocompose.ui.components.CustomButton
 import java.util.Locale
 
 @Composable
-fun CreatePGScreen(
-
-) {
+fun CreatePFScreen() {
 
     val context = LocalContext.current
 
     var name by remember {
-        mutableStateOf("Stephen")
+        mutableStateOf("Kawhi")
     }
     var lastName by remember {
-        mutableStateOf("Curry")
+        mutableStateOf("Leonard")
     }
     var age by remember {
-        mutableStateOf(35)
+        mutableStateOf(33)
     }
     var team by remember {
-        mutableStateOf("GS Warriors")
+        mutableStateOf("Los Angeles Clippers")
     }
     var handed by remember {
         mutableStateOf("Right")
     }
     var salary by remember {
-        mutableStateOf<Double>(50000000.0)
+        mutableStateOf<Double>(40000000.0)
     }
     var player by remember {
-        mutableStateOf<PointGuard?>(null)
+        mutableStateOf<PowerForward?>(null)
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -167,7 +165,7 @@ fun CreatePGScreen(
 
             CustomButton(text = "Create Player") {
                 if (name.isNotEmpty() && lastName.isNotEmpty() && age != 0 && team.isNotEmpty() && handed.isNotEmpty() && salary != 0.0) {
-                    player = PointGuard(
+                    player = PowerForward(
                         name, lastName, age, team, handed, salary
                     )
                     name = ""
@@ -195,14 +193,6 @@ fun CreatePGScreen(
 
                     CustomButton(text = "Score") {
                         Toast.makeText(context, player!!.score(), Toast.LENGTH_SHORT).show()
-                    }
-
-                    CustomButton(text = "Assist") {
-                        Toast.makeText(context, player!!.assist(), Toast.LENGTH_SHORT).show()
-                    }
-
-                    CustomButton(text = "Dribble") {
-                        Toast.makeText(context, player!!.dribble(), Toast.LENGTH_SHORT).show()
                     }
 
                     CustomButton(text = "Drink") {

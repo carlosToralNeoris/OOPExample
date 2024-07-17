@@ -1,6 +1,6 @@
 package com.example.poocompose.data.models
 
-open class Person(
+ open class Person(
     private var name : String,
     private var lastName : String,
     private var age : Int = 0

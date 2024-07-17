@@ -1,10 +1,20 @@
 package com.example.poocompose.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.poocompose.ui.estructuras.ArrayScreen
+import com.example.poocompose.ui.estructuras.EstructurasScreen
+import com.example.poocompose.ui.estructuras.ListScreen
+import com.example.poocompose.ui.estructuras.MapScreen
+import com.example.poocompose.ui.estructuras.MatrizScreen
+import com.example.poocompose.ui.poo.CreateCenterScreen
+import com.example.poocompose.ui.poo.CreatePFScreen
+import com.example.poocompose.ui.poo.CreatePGScreen
+import com.example.poocompose.ui.poo.CreateSFScreen
+import com.example.poocompose.ui.poo.CreateSGScreen
+import com.example.poocompose.ui.poo.MainScreen
 
 @Composable
 fun NavManager() {
@@ -13,9 +23,10 @@ fun NavManager() {
 
     NavHost(
         navController = navController,
-        startDestination = NavRoutes.Main.route
+        startDestination = NavRoutes.Estructuras.route
     ) {
 
+        //region POO
         composable(
             route = NavRoutes.Main.route
         ){
@@ -67,6 +78,48 @@ fun NavManager() {
         ){
             CreateCenterScreen()
         }
+        //endregion
+
+        //region Estructuras
+        composable(
+            route = NavRoutes.Estructuras.route
+        ){
+            EstructurasScreen (
+                goToArray = {
+                    navController.navigate(NavRoutes.Array.route)
+                },
+                goToList = {
+                    navController.navigate(NavRoutes.List.route)
+                },
+                goToMap = {
+                    navController.navigate(NavRoutes.Map.route)
+                },
+                gotToMatriz = {
+                    navController.navigate(NavRoutes.Matriz.route)
+                }
+            )
+        }
+        composable(
+            route = NavRoutes.Array.route
+        ){
+            ArrayScreen()
+        }
+        composable(
+            route = NavRoutes.List.route
+        ){
+            ListScreen()
+        }
+        composable(
+            route = NavRoutes.Map.route
+        ){
+            MapScreen()
+        }
+        composable(
+            route = NavRoutes.Matriz.route
+        ){
+            MatrizScreen()
+        }
+        //endregion
 
     }
 
@@ -74,11 +127,21 @@ fun NavManager() {
 
 sealed class NavRoutes(val route : String){
 
+    //region POO
     object Main : NavRoutes("Main")
     object PG : NavRoutes("PG")
     object SG : NavRoutes("SG")
     object SF : NavRoutes("SF")
     object PF : NavRoutes("PF")
     object Center : NavRoutes("Center")
+    //endregion
+
+    //region EstructurasDeDatos
+    object Estructuras : NavRoutes("Estructuras")
+    object Array : NavRoutes("Array")
+    object List : NavRoutes("List")
+    object Map : NavRoutes("Map")
+    object Matriz : NavRoutes("Matriz")
+    //endregion
 
 }
