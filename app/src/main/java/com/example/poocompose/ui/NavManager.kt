@@ -4,17 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.poocompose.ui.estructuras.ArrayScreen
-import com.example.poocompose.ui.estructuras.EstructurasScreen
-import com.example.poocompose.ui.estructuras.ListScreen
-import com.example.poocompose.ui.estructuras.MapScreen
-import com.example.poocompose.ui.estructuras.MatrizScreen
-import com.example.poocompose.ui.poo.CreateCenterScreen
-import com.example.poocompose.ui.poo.CreatePFScreen
-import com.example.poocompose.ui.poo.CreatePGScreen
-import com.example.poocompose.ui.poo.CreateSFScreen
-import com.example.poocompose.ui.poo.CreateSGScreen
-import com.example.poocompose.ui.poo.MainScreen
+import com.example.poocompose.estructuras.ui.ArrayScreen
+import com.example.poocompose.estructuras.ui.EstructurasScreen
+import com.example.poocompose.estructuras.ui.ListScreen
+import com.example.poocompose.estructuras.ui.MapScreen
+import com.example.poocompose.estructuras.ui.MatrizScreen
+import com.example.poocompose.poo.ui.CreateCenterScreen
+import com.example.poocompose.poo.ui.CreatePFScreen
+import com.example.poocompose.poo.ui.CreatePGScreen
+import com.example.poocompose.poo.ui.CreateSFScreen
+import com.example.poocompose.poo.ui.CreateSGScreen
+import com.example.poocompose.poo.ui.MainScreen
 
 @Composable
 fun NavManager() {

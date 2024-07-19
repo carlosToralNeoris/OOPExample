@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.3.2"
     }
     packaging {
         resources {
@@ -66,21 +66,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation ("androidx.compose.ui:ui-tooling:1.3.2")
+    debugImplementation ("androidx.compose.ui:ui-test-manifest:1.3.2")
 
     //Navigation
     implementation ("androidx.navigation:navigation-compose:2.7.7")
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     kapt("androidx.hilt:hilt-compiler:1.0.0")
 
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
 }

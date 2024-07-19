@@ -3,7 +3,7 @@ package com.example.poocompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.poocompose.data.models.Center
+import com.example.poocompose.estructuras.data.models.Center
 import com.example.poocompose.ui.NavManager
 import com.example.poocompose.ui.theme.PooComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
